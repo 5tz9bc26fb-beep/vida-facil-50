@@ -28,7 +28,7 @@ h2.section{font-size:18px;margin:15px 0 8px}.muted{color:var(--muted);font-size:
 .contact{display:flex;align-items:center;gap:10px}.contact .avatar{width:48px;height:48px}.contact b{font-size:13px}
 .input{width:100%;border:1px solid #d9d0e1;border-radius:11px;padding:11px;margin:5px 0;font-size:14px}
 .modal{display:none;position:fixed;inset:0;background:#0008;z-index:50;align-items:flex-end}.modal.show{display:flex}.modalbox{width:min(430px,100vw);margin:auto;background:#fff;border-radius:23px 23px 0 0;padding:22px;max-height:80vh;overflow:auto}.close{float:right;border:0;border-radius:50%;width:34px;height:34px}
-.community-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.community-card{border:0;border-radius:16px;padding:13px;text-align:left;color:#fff;min-height:116px;box-shadow:0 5px 12px #0002}.community-card span{display:block;font-size:31px}.community-card b{display:block;margin-top:5px;font-size:14px}.community-card small{display:block;margin-top:4px;opacity:.9}.purple{background:linear-gradient(145deg,#6125b7,#8a49d7)}.orange{background:linear-gradient(145deg,#ef9415,#ffb23c)}.green{background:linear-gradient(145deg,#079d68,#25bd80)}.blue{background:linear-gradient(145deg,#2386c8,#43a9e8)}.pink{background:linear-gradient(145deg,#df2d5c,#f25a80)}.teal{background:linear-gradient(145deg,#078f91,#26b7b8)}.event{display:flex;gap:12px;align-items:flex-start}.datebox{min-width:56px;background:#efe6fa;border-radius:13px;padding:9px;text-align:center;color:var(--p)}.datebox b{display:block;font-size:24px}.datebox small{font-weight:700}.community-photo{height:130px;border-radius:17px;margin:9px 0;background:linear-gradient(135deg,#e9ddfa,#fce9c9);display:flex;align-items:center;justify-content:center;font-size:72px;box-shadow:0 4px 10px #0001}.recipe,.book{display:flex;gap:12px;align-items:center;background:#fff;border-radius:16px;padding:11px;margin:9px 0;box-shadow:0 3px 10px #0001}.recipepic,.bookpic{width:70px;height:70px;border-radius:14px;background:#f6e9d4;display:flex;align-items:center;justify-content:center;font-size:40px;flex:none}.recipe b,.book b{display:block}.recipe small,.book small{display:block;color:var(--muted);margin-top:4px}.recipe p,.book p{margin:5px 0 0;color:var(--muted);font-size:12px}.travel-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.travel-photo{height:130px;border-radius:16px;background:linear-gradient(145deg,#dceefa,#e9f4dc);display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:44px;box-shadow:0 4px 10px #0001}.travel-photo b{font-size:12px;color:var(--ink);margin-top:5px}</style></head>
+.community-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.community-card{border:0;border-radius:16px;padding:13px;text-align:left;color:#fff;min-height:116px;box-shadow:0 5px 12px #0002}.community-card span{display:block;font-size:31px}.community-card b{display:block;margin-top:5px;font-size:14px}.community-card small{display:block;margin-top:4px;opacity:.9}.purple{background:linear-gradient(145deg,#6125b7,#8a49d7)}.orange{background:linear-gradient(145deg,#ef9415,#ffb23c)}.green{background:linear-gradient(145deg,#079d68,#25bd80)}.blue{background:linear-gradient(145deg,#2386c8,#43a9e8)}.pink{background:linear-gradient(145deg,#df2d5c,#f25a80)}.teal{background:linear-gradient(145deg,#078f91,#26b7b8)}.event{display:flex;gap:12px;align-items:flex-start}.datebox{min-width:56px;background:#efe6fa;border-radius:13px;padding:9px;text-align:center;color:var(--p)}.datebox b{display:block;font-size:24px}.datebox small{font-weight:700}.community-photo{height:130px;border-radius:17px;margin:9px 0;background:linear-gradient(135deg,#e9ddfa,#fce9c9);display:flex;align-items:center;justify-content:center;font-size:72px;box-shadow:0 4px 10px #0001}.recipe,.book{display:flex;gap:12px;align-items:center;background:#fff;border-radius:16px;padding:11px;margin:9px 0;box-shadow:0 3px 10px #0001}.recipepic,.bookpic{width:70px;height:70px;border-radius:14px;background:#f6e9d4;display:flex;align-items:center;justify-content:center;font-size:40px;flex:none}.recipe b,.book b{display:block}.recipe small,.book small{display:block;color:var(--muted);margin-top:4px}.recipe p,.book p{margin:5px 0 0;color:var(--muted);font-size:12px}.travel-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.travel-photo{height:130px;border-radius:16px;background:linear-gradient(145deg,#dceefa,#e9f4dc);display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:44px;box-shadow:0 4px 10px #0001}.travel-photo b{font-size:12px;color:var(--ink);margin-top:5px}.clickable{cursor:pointer}.clickable:active{transform:scale(.985);opacity:.92}.tabs button{cursor:pointer}.recipe,.book,.travel-photo,.community-photo,.post,.event,.contact,.card .row{cursor:pointer}</style></head>
 <body><div class="app">
 
 <section id="home" class="screen active">
@@ -225,4 +225,39 @@ function makeEverythingClickable(){
   });
 }
 makeEverythingClickable();
-</script></body></html>
+</script>
+<script>
+(function(){
+  const tabMap={
+    'Todos':'lembretes','Remédios':'remedios','Consultas':'consultas','Compromissos':'compromissos',
+    'Tutoriais':'aprenda','Segurança':'golpes','Apps':'aprenda'
+  };
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.add('clickable'));
+  document.querySelectorAll('.recipe,.book,.travel-photo,.community-photo,.post,.event,.contact,.card .row').forEach(el=>{
+    if(!el.getAttribute('onclick')) el.classList.add('clickable');
+  });
+  document.addEventListener('click', function(e){
+    const tab=e.target.closest('.tabs button');
+    if(tab){
+      const t=tab.textContent.trim();
+      if(tabMap[t]){
+        if(t==='Remédios'||t==='Consultas'||t==='Compromissos') go(tabMap[t]);
+        else if(t==='Segurança') go('golpes');
+        else go(tabMap[t]);
+      } else demo('Categoria selecionada', 'Você selecionou: '+t+'. Aqui ficam os conteúdos demonstrativos dessa categoria.');
+      return;
+    }
+    const el=e.target.closest('.recipe,.book,.travel-photo,.community-photo,.post,.event,.contact,.card .row');
+    if(!el || el.closest('button[onclick],a[onclick]')) return;
+    if(el.classList.contains('recipe')) demo('Receita','Bolo de milho cremoso: ingredientes, modo de preparo e opção de salvar nos favoritos.');
+    else if(el.classList.contains('book')) demo('Livro / indicação','Exemplo de indicação da comunidade, com resumo, comentários e opção de participar do clube de leitura.');
+    else if(el.classList.contains('travel-photo')) demo('Viagem e passeio','Veja fotos, informações do passeio e combine com amigos da comunidade.');
+    else if(el.classList.contains('community-photo')) demo('Publicação','Maria pode curtir, comentar, compartilhar ou abrir a publicação completa.');
+    else if(el.classList.contains('event')) demo('Evento','Evento da comunidade com data, horário, local e botão “Tenho interesse”.');
+    else if(el.classList.contains('contact')) demo('Contato de confiança','Aqui aparecem nome, relação, telefone e autorização para receber alertas de proteção.');
+    else if(el.classList.contains('post')) demo('Publicação','Você pode curtir, comentar, compartilhar e acompanhar as respostas.');
+    else demo('Item selecionado','Esta função está disponível na demonstração do Vida Fácil 50+.');
+  });
+})();
+</script>
+</body></html>
