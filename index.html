@@ -41,12 +41,12 @@ h2.section{font-size:18px;margin:15px 0 8px}.muted{color:var(--muted);font-size:
 <div id="homeVoice" class="voicebar" onclick="startHomeVoice()"><span id="homeMic">🎙️</span><div><b>Fale com o Vida Fácil!</b><div id="homeVoiceText" class="muted">É só dizer o que você precisa.</div></div><button aria-label="Abrir assistente">›</button></div></div></section>
 
 <section id="vida" class="screen"><div class="top"><button onclick="go('home')">‹</button><div><h1>Minha Vida</h1><small>Organização e bem-estar</small></div></div><div class="pad">
-<div class="card profile"><div class="avatar">👩🏻</div><div><b>Maria Silva</b><div class="muted">56 anos • Serra Talhada - PE</div><span style="color:var(--p);font-size:11px;font-weight:700">✎ Editar perfil</span></div></div>
+<div class="card profile" onclick="demo('Perfil de Maria Silva','56 anos • Serra Talhada - PE. Perfil demonstrativo com preferências de acessibilidade, interesses e contatos de confiança.')"><div class="avatar">👩🏻</div><div><b>Maria Silva</b><div class="muted">56 anos • Serra Talhada - PE</div><span style="color:var(--p);font-size:11px;font-weight:700">✎ Editar perfil</span></div></div>
 <h2 class="section">Hoje <span style="float:right;color:var(--muted);font-size:10px;font-weight:400">15 de abril de 2025</span></h2>
 <div class="card"><div class="row"><div class="ico">⏰</div><div><b>Lembretes</b><small>Tomar remédio • 08:00<br>Consulta médica • 14:30</small></div><span class="right" onclick="go('lembretes')">Ver todos ›</span></div>
-<div class="row"><div class="ico">📅</div><div><b>Compromissos</b><small>Reunião com a equipe • 10:00<br>Aniversário da neta • 18:00</small></div></div>
-<div class="row"><div class="ico">📄</div><div><b>Documentos</b><small>RG, CPF, Cartão SUS,<br>Comprovante de residência</small></div><span class="right">Acessar ›</span></div>
-<div class="row"><div class="ico">💬</div><div><b>Mensagens</b><small>Ana: “Mãe, já cheguei!”</small></div><span class="right">Ver todas ›</span></div></div></div></section>
+<div class="row" onclick="go('compromissos')"><div class="ico">📅</div><div><b>Compromissos</b><small>Reunião com a equipe • 10:00<br>Aniversário da neta • 18:00</small></div></div>
+<div class="row" onclick="go('documentos')"><div class="ico">📄</div><div><b>Documentos</b><small>RG, CPF, Cartão SUS,<br>Comprovante de residência</small></div><span class="right">Acessar ›</span></div>
+<div class="row" onclick="go('mensagens')"><div class="ico">💬</div><div><b>Mensagens</b><small>Ana: “Mãe, já cheguei!”</small></div><span class="right">Ver todas ›</span></div></div></div></section>
 
 <section id="lembretes" class="screen"><div class="top"><button onclick="go('vida')">‹</button><div><h1>Lembretes</h1><small>Maria Silva</small></div></div><div class="pad"><div class="tabs"><button class="on">Todos</button><button>Remédios</button><button>Consultas</button><button>Compromissos</button></div><div class="card">
 <div class="row"><div class="ico">💊</div><div><b>Tomar remédio</b><small>Losartana 50mg<br>08:00 • Todos os dias</small></div><b class="right" style="color:var(--green)">✓</b></div>
@@ -125,7 +125,7 @@ h2.section{font-size:18px;margin:15px 0 8px}.muted{color:var(--muted);font-size:
 <div class="card protect"><b>🎙️ Comando de voz</b><div class="command">“Socorro, preciso de ajuda!”</div><div class="muted">O reconhecimento do comando só fica disponível quando Maria ativa o Modo Proteção. O aplicativo não fica ouvindo continuamente.</div></div>
 <div class="card protect"><b>🆘 Botão SOS</b><div class="muted" style="margin:7px 0 12px">Toque para enviar um alerta manual aos contatos escolhidos.</div><button class="sos" onclick="sos()">🆘 PEDIR AJUDA</button><div id="sosmsg" class="muted" style="margin-top:9px"></div></div>
 <button class="primary danger" onclick="demo('Modo Proteção','Nesta demonstração, o modo é apresentado como ativo. Na versão real, o reconhecimento do comando de emergência seguirá as permissões do dispositivo.')">Desativar modo proteção</button>
-<button class="primary" onclick="go('contatos')">👥 Meus contatos de confiança</button></div></section>
+<button class="primary" onclick="go('contatos')">👥 Meus contatos de confiança</button><button class="primary" onclick="go('configuracoes')">⚙️ Configurações e privacidade</button></div></section>
 
 <section id="voz" class="screen"><div class="top"><button onclick="go('home')">‹</button><div><h1>Assistente de Voz</h1><small>Fale com o Vida Fácil!</small></div></div><div class="pad" style="text-align:center"><button class="mic" onclick="voiceDemo()">🎙️</button><h2>Fale com o Vida Fácil!</h2><div class="muted">É só dizer o que você precisa.</div>
 <div class="command" onclick="go('lembretes')">“Quero ver meus lembretes”</div><div class="command" onclick="lesson('Como fazer videochamada','O tutorial mostra passo a passo como iniciar uma videochamada.')">“Como faço uma videochamada?”</div><div class="command" onclick="go('aprenda')">“Me conte sobre alerta de golpes”</div><div class="command" onclick="go('protecao')">“Socorro, preciso de ajuda!”</div><div id="voiceok" class="green" style="display:none;margin-top:12px">🎙️ Comando reconhecido na demonstração.</div></div></section>
@@ -135,7 +135,7 @@ h2.section{font-size:18px;margin:15px 0 8px}.muted{color:var(--muted);font-size:
 <div class="card contact"><div class="avatar">👨🏽</div><div><b>João Carlos</b><div class="muted">Filho • (89) 9 8888-2222</div></div><span class="right">✎</span></div>
 <div class="card contact"><div class="avatar">👩🏻</div><div><b>Maria José</b><div class="muted">Irmã • (87) 9 7777-3333</div></div><span class="right">✎</span></div>
 <button class="primary" onclick="demo('Adicionar contato','Maria poderá escolher uma pessoa de confiança e autorizar o recebimento dos alertas de emergência.')">＋ Adicionar contato</button>
-<div class="card muted">💡 Dica: mantenha seus contatos sempre atualizados.</div></div></section>
+<div class="card muted">💡 Dica: mantenha seus contatos sempre atualizados.</div><button class="primary" onclick="go('configuracoes')">⚙️ Configurações e privacidade</button></div></section>
 
 <section id="atualizacoes" class="screen"><div class="top"><button onclick="go('home')">‹</button><div><h1>Atualizações</h1><small>Novidades do Vida Fácil 50+</small></div></div><div class="pad"><div class="card" style="background:linear-gradient(135deg,#efe5fb,#fff)"><b style="color:var(--p);font-size:17px">✨ Versão 1.1</b><p>Nova Comunidade 50+ com grupos, amigos, atividades e eventos.</p><small class="muted">Atualização recente</small></div><div class="card"><div class="row"><div class="ico">👥</div><div><b>Comunidade ampliada</b><small>Agora você pode explorar culinária, viagens, livros, cultura, artesanato e muito mais.</small></div></div></div><div class="card"><div class="row"><div class="ico">📅</div><div><b>Eventos e atividades</b><small>Veja encontros, caminhadas, oficinas e marque seu interesse.</small></div></div></div><div class="card"><div class="row"><div class="ico">👫</div><div><b>Novos amigos</b><small>Encontre pessoas com interesses parecidos e conheça novos grupos.</small></div></div></div><div class="card"><b>🔔 Próxima atualização</b><p class="muted">Mais conteúdos de Aprenda Fácil, melhorias no Assistente de Voz e novas opções de acessibilidade.</p></div><button class="primary" onclick="demo('Atualizações automáticas','Quando uma nova versão estiver disponível, Maria poderá visualizar as novidades nesta aba.')">Como funciona?</button></div></section>
 
@@ -157,6 +157,29 @@ h2.section{font-size:18px;margin:15px 0 8px}.muted{color:var(--muted);font-size:
 <div class="card"><div class="row"><div class="ico">🏦</div><div><b>Resolver pendência</b><small>Sexta • 09:00</small><p class="muted">Organizar documentos</p></div></div><button class="primary" onclick="demo('Compromisso','Compromisso salvo na sua agenda.')">✓ Confirmar</button></div>
 <div class="card"><b>➕ Novo compromisso</b><p class="muted">Adicione uma tarefa, encontro ou atividade.</p><button class="primary" onclick="demo('Novo compromisso','Tela demonstrativa para criar um novo compromisso.')">Adicionar</button></div>
 </div></section>
+
+<section id="documentos" class="screen"><div class="top"><button onclick="go('vida')">‹</button><div><h1>Documentos</h1><small>Documentos importantes</small></div></div><div class="pad">
+<div class="card" onclick="demo('RG','Documento cadastrado para consulta rápida. Na versão real, o acesso será protegido por senha ou biometria.')"><div class="row"><div class="ico">🪪</div><div><b>RG</b><small>Documento de identidade • cadastrado</small></div><span class="right">›</span></div></div>
+<div class="card" onclick="demo('CPF','CPF cadastrado no perfil de Maria. A informação pode ser ocultada e protegida.')"><div class="row"><div class="ico">📄</div><div><b>CPF</b><small>Documento pessoal • protegido</small></div><span class="right">›</span></div></div>
+<div class="card" onclick="demo('Cartão SUS','Cartão SUS disponível para consulta rápida, sem substituir o documento físico.')"><div class="row"><div class="ico">🏥</div><div><b>Cartão SUS</b><small>Número cadastrado • acesso protegido</small></div><span class="right">›</span></div></div>
+<div class="card" onclick="demo('Comprovante de residência','Comprovante salvo na área privada de Maria.')"><div class="row"><div class="ico">🏠</div><div><b>Comprovante de residência</b><small>Documento salvo • atualizado</small></div><span class="right">›</span></div></div>
+<button class="primary" onclick="demo('Adicionar documento','Maria poderá fotografar ou selecionar um documento e definir se ele ficará protegido.')">＋ Adicionar documento</button></div></section>
+
+<section id="mensagens" class="screen"><div class="top"><button onclick="go('vida')">‹</button><div><h1>Mensagens</h1><small>Comunicação simples e organizada</small></div></div><div class="pad">
+<div class="card contact" onclick="demo('Ana Paula','“Mãe, já cheguei! Depois te ligo.”\n\nMaria pode ouvir a mensagem, ampliar o texto ou pedir ao assistente para explicar.')"><div class="avatar">👩🏻</div><div><b>Ana Paula</b><div class="muted">Mensagem hoje • 12:10</div><small>“Mãe, já cheguei!”</small></div><span class="right">›</span></div>
+<div class="card contact" onclick="demo('João Carlos','“Vamos almoçar domingo?”\n\nMaria pode responder por texto ou voz.')"><div class="avatar">👨🏽</div><div><b>João Carlos</b><div class="muted">Mensagem ontem • 18:42</div><small>“Vamos almoçar domingo?”</small></div><span class="right">›</span></div>
+<div class="card" onclick="demo('Entender mensagem','A função pode transformar uma mensagem difícil em uma explicação simples e também ler o conteúdo em voz alta.')"><div class="row"><div class="ico">🧠</div><div><b>Ajuda para entender uma mensagem</b><small>Envie ou selecione uma mensagem para explicar.</small></div><span class="right">›</span></div></div>
+<button class="primary" onclick="demo('Nova mensagem','Maria poderá escrever, falar e escolher um contato para enviar a mensagem.')">＋ Nova mensagem</button></div></section>
+
+<section id="configuracoes" class="screen"><div class="top"><button onclick="go('home')">‹</button><div><h1>Configurações</h1><small>Privacidade, acessibilidade e segurança</small></div></div><div class="pad">
+<div class="card" onclick="demo('Acessibilidade','Texto grande: ativado\nContraste confortável: ativado\nLeitura em voz alta: disponível\nComandos de voz: disponíveis conforme permissões.')"><div class="row"><div class="ico">🔎</div><div><b>Acessibilidade</b><small>Texto, áudio e tamanho da tela</small></div><span class="right">›</span></div></div>
+<div class="card" onclick="demo('Privacidade','Perfil da comunidade: somente informações escolhidas por Maria. Localização exata: não compartilhada por padrão. Dados pessoais não são vendidos.')"><div class="row"><div class="ico">🔒</div><div><b>Privacidade</b><small>Controle seus dados e compartilhamentos</small></div><span class="right">›</span></div></div>
+<div class="card" onclick="go('contatos')"><div class="row"><div class="ico">👥</div><div><b>Pessoas cadastradas</b><small>Ana Paula • João Carlos • Maria José</small></div><span class="right">›</span></div></div>
+<div class="card" onclick="demo('Notificações','Lembretes, eventos, mensagens e alertas de segurança podem ser configurados separadamente.')"><div class="row"><div class="ico">🔔</div><div><b>Notificações</b><small>Escolha o que deseja receber</small></div><span class="right">›</span></div></div>
+<div class="card" onclick="demo('Segurança','Modo Proteção, contatos de confiança e permissões de localização podem ser revisados a qualquer momento.')"><div class="row"><div class="ico">🛡️</div><div><b>Segurança</b><small>Proteção e permissões</small></div><span class="right">›</span></div></div>
+<div class="card" onclick="demo('Sobre o Vida Fácil 50+','Tecnologia que conecta, orienta, protege e dá autonomia. Protótipo para apresentação da startup.')"><div class="row"><div class="ico">ℹ️</div><div><b>Sobre o aplicativo</b><small>Versão demonstrativa</small></div><span class="right">›</span></div></div>
+</div></section>
+
 <div id="modal" class="modal"><div class="modalbox"><button class="close" onclick="closeM()">×</button><h2 id="mt"></h2><p id="mx" class="muted"></p><button class="primary" onclick="closeM()">Entendi</button></div></div>
 <div class="bottom"><button class="nav active" onclick="go('home')"><span>⌂</span>Início</button><button class="nav" onclick="go('comunidade')"><span>👥</span>Comunidade</button><button class="nav" onclick="go('voz')"><span>🎙️</span>Falar</button><button class="nav" onclick="go('atualizacoes')"><span>🔔</span>Atualizações</button><button class="nav" onclick="go('protecao')"><span>☰</span>Mais</button></div>
 </div>
@@ -173,23 +196,32 @@ function startHomeVoice(){const bar=document.getElementById('homeVoice');const m
 .card, .lesson, .recipe, .book, .travel-photo, .contact, .command, .green, .tabs button, .ico, .community-photo { cursor:pointer; }
 .card:active, .lesson:active, .recipe:active, .book:active, .travel-photo:active, .contact:active, .command:active, .tabs button:active { transform:scale(.99); }
 function makeEverythingClickable(){
+  const map={
+    'Lembretes':'lembretes','Compromissos':'compromissos','Documentos':'documentos','Mensagens':'mensagens',
+    'Amigos':'amigos','Atividades':'atividades','Eventos':'eventos','Crochê e Artesanato':'grupo_croche',
+    'Receitas e Culinária':'grupo_culinaria','Viagens e Passeios':'grupo_viagens','Livros':'grupo_livros',
+    'Música e Cultura':'grupo_cultura','Remédios':'remedios','Consultas':'consultas','Configurações':'configuracoes'
+  };
   document.querySelectorAll('.card, .lesson, .recipe, .book, .travel-photo, .contact, .community-photo').forEach(el=>{
     if(el.dataset.clickReady || el.querySelector('button[onclick]')) return;
     el.dataset.clickReady='1';
     el.addEventListener('click', e=>{
-      if(e.target.closest('button,a')) return;
-      const title = el.querySelector('b,h2')?.textContent?.trim() || 'Item selecionado';
-      demo(title, 'Esta opção está disponível no protótipo. Toque nos botões para explorar as ações e informações desta área.');
+      if(e.target.closest('button,a,[onclick]')) return;
+      const title=(el.querySelector('b,h2')?.textContent||'').trim();
+      if(map[title]) return go(map[title]);
+      const label=el.querySelector('b,h2')?.textContent?.trim() || 'Item selecionado';
+      demo(label,'Você abriu esta opção. Esta demonstração apresenta como a função funcionaria no Vida Fácil 50+ e permite explorar suas ações.');
     });
+  });
+  document.querySelectorAll('#vida .row').forEach(row=>{
+    if(row.dataset.clickReady) return; row.dataset.clickReady='1';
+    row.style.cursor='pointer';
+    row.addEventListener('click',e=>{ if(e.target.closest('button,a,[onclick]')) return; const t=row.querySelector('b')?.textContent?.trim(); if(map[t]) go(map[t]); });
   });
   document.querySelectorAll('.tabs button').forEach(btn=>{
     if(btn.dataset.tabReady) return;
     btn.dataset.tabReady='1';
-    btn.addEventListener('click',()=>{
-      btn.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));
-      btn.classList.add('on');
-      demo('Filtro: '+btn.textContent.trim(), 'Os conteúdos desta categoria serão exibidos aqui na versão completa.');
-    });
+    btn.addEventListener('click',()=>{btn.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');demo('Filtro: '+btn.textContent.trim(),'Os conteúdos desta categoria foram selecionados para a demonstração.');});
   });
 }
 makeEverythingClickable();
